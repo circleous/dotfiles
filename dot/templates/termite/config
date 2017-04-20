@@ -1,0 +1,26 @@
+[options]
+font = PragmataPro Mono 10
+
+[colors]
+background = {{ color00 }}
+foreground = {{ color15 }}
+foreground_bold = {{ color15 }}
+
+color0  = {{ color00 }}
+color8  = {{ color08 }}
+color1  = {{ color01 }}
+color9  = {{ color09 }}
+color2  = {{ color02 }}
+color10 = {{ color10 }} 
+color3  = {{ color03 }} 
+color11 = {{ color11 }} 
+color4  = {{ color04 }} 
+color12 = {{ color12 }} 
+color5  = {{ color05 }} 
+color13 = {{ color13 }} 
+color6  = {{ color06 }} 
+color14 = {{ color14 }} 
+color7  = {{ color07 }} 
+color15 = {{ color15 }} 
+
+# vim: ft=dosini cms=#%s

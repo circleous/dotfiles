@@ -27,7 +27,8 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=$SCRIPT_DIR/$BLOCK_NAME
-separator_block_width=15
+
+separator_block_width=8
 
 [bandwith]
 label=<span color='red'>⇵</span>
@@ -45,7 +46,7 @@ interval=persist
 min_width=🖳  100.00%
 
 [disk]
-label=🖪   /
+label=🖫/
 instance=/
 interval=60
 separator=false
@@ -79,4 +80,3 @@ command=date '+%a, %d %b'
 [time]
 interval=60
 command=date '+%H:%M'
-

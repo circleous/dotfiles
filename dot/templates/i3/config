@@ -6,9 +6,9 @@ set $ws4 "4:core"
 set $ws5 "5:music"
 
 # Apps
-set $weeb chromium
+set $weeb firefox
 set $term termite
-set $menu rofi
+set $menu rofi -show run
 set $file pcmanfm
 
 # Modifier
@@ -21,7 +21,7 @@ set $up     k
 set $right  l
 
 # Font
-font pango:Gohu GohuFont 8
+font pango:PragmataPro Mono 9
 
 # Basics:
     # Mouse + $mod for draggind
@@ -36,17 +36,14 @@ font pango:Gohu GohuFont 8
     # Exit
     bindsym $mod+Shift+e exit
 
+    # Restart
+    bindsym $mod+Shift+r restart
+
     # Lock
     bindsym $mod+Escape exec lock # ~/bin
 
-    # Window list
-    bindsym $mod+Tab exec --no-startup-id $menu -modi window -show window
-
-    # Die
-    bindsym $mod+Shift+Escape exec shutdown_menu # ~/bin
-
 # Spawn:
-    bindsym $mod+space   exec --no-startup-id $menu -modi run -show run
+    bindsym $mod+space   exec --no-startup-id $menu
     bindsym $mod+Return  exec --no-startup-id $term
     bindsym $mod+Shift+b exec --no-startup-id $weeb
     bindsym $mod+Shift+f exec --no-startup-id $file
@@ -139,13 +136,13 @@ bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 
-bindsym XF86MonBrightnessUp exec lux -a 2
-bindsym XF86MonBrightnessDown exec lux -s 2
+bindsym XF86MonBrightnessUp exec lux -a 25
+bindsym XF86MonBrightnessDown exec lux -s 25
 
 # Snowflakes ;)
-set $bg-color            #1D2021
-set $inactive-bg-color   #3C3836
-set $text-color          #FBF1C7
+set $bg-color            #fbf1c7
+set $inactive-bg-color   #282828
+set $text-color          #3c3836
 set $inactive-text-color #504945
 set $urgent-bg-color     #CC241d
 set $indicator-color     #FB4934
@@ -160,8 +157,10 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bar {
     status_command SCRIPT_DIR=~/.config/i3/blocks/ i3blocks
     strip_workspace_numbers yes
-    position top
+    position bottom
     colors {
+    background #282828
+    statusline #ebdbb2
         # colors           border               bg                  fg
         focused_workspace  $bg-color            $bg-color           $text-color 
         inactive_workspace $inactive-bg-color   $inactive-bg-color  $inactive-text-color 
@@ -170,10 +169,16 @@ bar {
 }
 
 # Gaps
-gaps outer 2
-gaps inner 2
+gaps outer 4
+gaps inner 4
+smart_borders no_gaps
 smart_gaps on
 
 # misc
+for_window [class="^.*"] border pixel 3
+
 assign [class="Chromium"] $ws2
-exec xautolock -time 5 -locker '~/bin/lock' &
+assign [class="Firefox"] $ws2
+
+#exec xautolock -time 5 -locker '~/bin/lock' &
+exec --no-startup-id dunst
