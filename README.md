@@ -36,3 +36,12 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 Then do `:PackerInstall` inside nvim.
 
+### Additional steps for fzf
+
+fzf key bindings are heavily used in the workflow, after install fzf, add (source) the included `key-bindings.zsh` from installation files to `$HOME/.zsh/keybinding.zsh`
+
+## Screenshots
+
+![nvim](assets/nvim.png)
+
+![term](assets/term.png)
