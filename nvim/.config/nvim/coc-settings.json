@@ -1,0 +1,31 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "rust",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact",
+    "yaml"
+  ],
+  "diagnostic-languageserver.filetypes": {
+    "python": "mypy",
+    "sh": "shellcheck"
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt",
+    "python": ["yapf", "isort"]
+  },
+  "diagnostic-languageserver.formatters": {
+    "yapf": {
+      "command": "yapf",
+      "args": ["--quiet"]
+    },
+    "isort": {
+      "command": "isort",
+      "args": ["--quiet", "-"]
+    }
+  }
+}
