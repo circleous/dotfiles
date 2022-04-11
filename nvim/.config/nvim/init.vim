@@ -1,15 +1,22 @@
 lua require("plugins")
 
+" workaround for packer_compiled.lua sourced late after init.vim
+let $packer_compiled = stdpath("config") . "/packer_compiled.vim"
+if filereadable($packer_compiled)
+  source $packer_compiled
+endif
+
+lua require("core")
+
+lua require("config.alpha")
 lua require("config.coc")
 lua require("config.lualine")
 lua require("config.telescope")
 lua require("config.treesitter")
+lua require("config.nvimtree")
+lua require("config.vista")
 
 runtime keybindings.vim
-
-let g:tokyonight_style = "night"
-let g:tokyonight_sidebars = [ "terminal", "packer" ]
-colorscheme tokyonight
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"

@@ -43,3 +43,6 @@ nnoremap <C-P> :lua require("telescope.builtin").find_files()<CR>
 nnoremap <C-F> :lua require("telescope.builtin").live_grep()<CR>
 nnoremap <C-B> :lua require("telescope.builtin").buffers()<CR>
 
+" --- nvim-tree ---
+nnoremap <C-n> :NvimTreeToggle<CR>
+
